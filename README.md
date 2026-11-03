@@ -1,17 +1,16 @@
 # SigmaOS-podman
 
-Missing OS component for SigmaOS.
+SigmaOS cloud and infrastructure component.
 
-## Inspiration
+## Features
+- Cluster mode support
+- Deployment automation
+- Configuration management
 
-This component is inspired by major Linux distributions to provide:
-- Essential OS functionality
-- System management
-- User tools
-- Developer tools
+## Usage
+```bash
+cargo run --release
+```
 
-## Status
-
-- Architecture: Designed
-- Implementation: Basic
-- Testing: Basic
+## License
+MIT

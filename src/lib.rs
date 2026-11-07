@@ -1,42 +1,7 @@
-//! SigmaOS-podman - SigmaOS Component
-//!
-//! Cloud and infrastructure component for SigmaOS.
+//! SigmaOS-podman — utility model.
 
-use anyhow::Result;
-use log::info;
-use serde::{Deserialize, Serialize};
+pub mod util;
+pub mod options;
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct Config {
-    pub enabled: bool,
-    pub cluster_mode: bool,
-}
-
-impl Default for Config {
-    fn default() -> Self {
-        Self { enabled: true, cluster_mode: false }
-    }
-}
-
-pub struct podman {
-    config: Config,
-}
-
-impl podman {
-    pub fn new(config: Config) -> Self {
-        Self { config }
-    }
-
-    pub fn initialize(&mut self) -> Result<()> {
-        info!("Initializing SigmaOS-podman");
-        if self.config.cluster_mode {
-            info!("Cluster mode enabled");
-        }
-        Ok(())
-    }
-
-    pub fn deploy(&mut self) -> Result<()> {
-        info!("Deploying SigmaOS-podman");
-        Ok(())
-    }
-}
+pub use util::Model;
+pub use options::{Mode, Options};

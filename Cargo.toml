@@ -1,8 +1,15 @@
 [package]
-name = "sigmaos_podman"
+name = "SigmaOS-podman"
 version = "0.1.0"
 edition = "2021"
+license = "Apache-2.0"
+description = "SigmaOS sigmaos_podman component"
 
 [lib]
 name = "sigmaos_podman"
 path = "src/lib.rs"
+
+[dependencies]
+thiserror = "1"
+
+[dev-dependencies]
